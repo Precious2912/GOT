@@ -14,9 +14,10 @@ const CharacterDetail = () => {
             const data = await getCharacter()
             setCharacter(data)
             setIsLoading(false)
-            getQuotes(data.fullName)
+            await getQuotes(data.fullName)
         }
         get()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getCharacter = async () => {

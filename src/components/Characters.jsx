@@ -20,9 +20,11 @@ const Characters = ({search}) => {
     useEffect(() => {
         if(search.length < 2) setCharacters(tempCharacters)
         else {
-            const filtered = characters.filter(x => x.fullName.toLowerCase().includes(search))
+            const filtered = tempCharacters.filter(x => x.fullName.toLowerCase().includes(search))
             setCharacters(filtered)
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
 
     const fetchCharacters = async () => {

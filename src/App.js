@@ -8,13 +8,15 @@ function App() {
   const [quote, setQuote] = useState({})
   const [quoteFetched, setQuoteFetched] = useState(false)
   const [searchText, setSearchText] = useState("")
+  const apiKey = process.env.REACT_APP_RAPIDAPIKEY
+  const baseUrl = process.env.REACT_APP_RAPIDAPIHOST
 
   const getQuote = async () => {
-    const response = await fetch('https://game-of-thrones-quotes.p.rapidapi.com/api/quote/random',
+    const response = await fetch(`https://${baseUrl}/api/quote/random`,
     {
         headers: {
-            'X-RapidAPI-Key': '19cfffa33amsh3c96d983efb7869p1b117ajsnb55b3e16524a',
-            'X-RapidAPI-Host': 'game-of-thrones-quotes.p.rapidapi.com'
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': baseUrl
         }
     })
     const result = await response.json()

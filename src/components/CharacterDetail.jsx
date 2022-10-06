@@ -6,6 +6,8 @@ const CharacterDetail = () => {
     const [character, setCharacter] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const {id} = useParams();
+    const apiKey = process.env.RAPIDAPIKEY
+    const baseUrl = process.env.RAPIDAPIHOST
 
     useEffect(() => {
         const get = async () => {
@@ -24,11 +26,11 @@ const CharacterDetail = () => {
 
     const getQuotes = async (name) => {
         const data = name.toLowerCase().split(' ').join('_')
-        const response = await fetch(`https://game-of-thrones-quotes.p.rapidapi.com/api/quote/by/${data}`,
+        const response = await fetch(`https://${baseUrl}/api/quote/by/${data}`,
         {
             headers: {
-                'X-RapidAPI-Key': '19cfffa33amsh3c96d983efb7869p1b117ajsnb55b3e16524a',
-                'X-RapidAPI-Host': 'game-of-thrones-quotes.p.rapidapi.com'
+                'X-RapidAPI-Key': apiKey,
+                'X-RapidAPI-Host': baseUrl
             }
         })
         const result = await response.json()

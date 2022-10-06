@@ -22,8 +22,7 @@ button, input {
 }
 
 .container {
-  margin-top: 3rem;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
 }
 
 .btn-primary {
@@ -35,6 +34,10 @@ button, input {
   border: none;
   border-radius: 5px;
 }
+
+.btn-primary:hover{
+  cursor: pointer;
+}
 /* end-general */
 
 /* navbar */
@@ -42,7 +45,8 @@ button, input {
   height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 10rem;
 }
 
 .logo {
@@ -161,6 +165,7 @@ button, input {
 .character-detail {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: calc(100vh - 11rem);
   width: 100%;
 }
@@ -178,13 +183,60 @@ button, input {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  background: var(--primary);
+  background: linear-gradient(#b53f0cb9, #b53f0cb9), url(./gotcover.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
   width: 55%;
   padding: 2rem;
   color: whitesmoke;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 5px;
 }
+
+.detail-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 /* end character detail */
+
+@media only screen and (max-width: 600px) {
+  .title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--primary);
+  }
+
+  .btn-primary {
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .navbar{
+    padding: 0 1rem;
+  }
+
+  .nav {
+    gap: 0.5rem;
+    width: 70%;
+  }
+
+  .character-detail {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .character-detail img {
+    width: 100%;
+  }
+  
+  .character-detail .details {
+    width: 100%;
+  }
+}

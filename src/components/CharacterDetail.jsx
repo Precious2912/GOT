@@ -46,10 +46,10 @@ const CharacterDetail = () => {
                     <div className="character-detail">
                         <img src={character.imageUrl} alt={`${character.fullName}`}/>
                         <div className="details">
-                            <p>Name: {character.fullName}</p>
-                            <p>Family: {character.family}</p>
-                            <p>Title: {character.title}</p>
-                            {quotes && <p>Random Quote: "{quotes.quote}"</p>}
+                            <p><span className="detail-title">Name</span>: {character.fullName}</p>
+                            <p><span className="detail-title">Family</span>: {character.family}</p>
+                            <p><span className="detail-title">Title</span>: {character.title}</p>
+                            {quotes && <p><span className="detail-title">Random Quote</span>: "{quotes.quote}"</p>}
                         </div>
                     </div>
                 </div>

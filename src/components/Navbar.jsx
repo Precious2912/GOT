@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {ReactComponent as Logo} from '../got.svg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = ({fetchQuote, handleSearch}) => {
   const [text, setText] = useState("")
+  const location = useLocation()
 
   const search = (e) => {
     setText(e.target.value);
@@ -13,10 +14,12 @@ const Navbar = ({fetchQuote, handleSearch}) => {
   return (
     <div className='navbar'>
       <Link to={'/'}><Logo className='logo'/></Link>
-      <div className="nav">
-          <input type="text" value={text} onChange={(e) => search(e)} className="search" placeholder='Search character' />
-          <button className="btn-primary" onClick={() => fetchQuote()}>Get Random Quote</button>
-      </div>
+      {location.pathname === '/' &&
+        <div className="nav">
+            <input type="text" value={text} onChange={(e) => search(e)} className="search" placeholder='Search character' />
+            <button className="btn-primary" onClick={() => fetchQuote()}>Random Quote</button>
+        </div>
+      }
     </div>
   )
 }

@@ -6,8 +6,8 @@ const CharacterDetail = () => {
     const [character, setCharacter] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const {id} = useParams();
-    const apiKey = process.env.RAPIDAPIKEY
-    const baseUrl = process.env.RAPIDAPIHOST
+    const apiKey = process.env.REACT_APP_RAPIDAPIKEY
+    const baseUrl = process.env.REACT_APP_RAPIDAPIHOST
 
     useEffect(() => {
         const get = async () => {

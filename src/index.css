@@ -132,10 +132,16 @@ button, input {
   padding: 2rem;
   margin: 2rem auto 4rem;
   border-radius: 5px;
-  height: calc(100vh - 11rem);
+  /* height: calc(100vh - 11rem); */
+  height: auto;
 }
 
-.quote {
+.quote1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.quote2 {
   font-size: 2rem;
   font-weight: 500;
 }
@@ -198,7 +204,7 @@ button, input {
 
 .detail-title {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 /* end character detail */
 
@@ -238,5 +244,31 @@ button, input {
   
   .character-detail .details {
     width: 100%;
+  }
+
+  .quote-area {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .quote1 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .quote2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .quotation{
+    font-size: 3rem;
+    margin-bottom: -2rem;
+  }
+
+  .quotation2{
+    font-size: 3rem;
+    margin-top: -1rem;
   }
 }

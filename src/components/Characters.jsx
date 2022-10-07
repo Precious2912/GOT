@@ -20,7 +20,7 @@ const Characters = ({search}) => {
     useEffect(() => {
         if(search.length < 2) setCharacters(tempCharacters)
         else {
-            const filtered = tempCharacters.filter(x => x.fullName.toLowerCase().includes(search))
+            const filtered = tempCharacters.filter(x => x.fullName.toLowerCase().includes(search.toLowerCase()))
             setCharacters(filtered)
         }
 

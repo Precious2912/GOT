@@ -105,6 +105,10 @@ button, input {
   position: relative;
 }
 
+.character:hover{
+  box-shadow: 5px 5px 15px #B9540C ;
+}
+
 .link {
   height: 100%;
   width: 100%;

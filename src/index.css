@@ -240,7 +240,7 @@ button, input {
   .character-detail {
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 2rem;
+    height: auto;
   }
 
   .character-detail img {

@@ -24,6 +24,10 @@ function App() {
     setQuoteFetched(true)
   }
 
+  const hideQuote = () => {
+    setQuoteFetched(false);
+  }
+
   const handleSearch = (text) => {
     setSearchText(text)
   }
@@ -34,7 +38,7 @@ function App() {
         <Navbar handleSearch={handleSearch} fetchQuote={getQuote}/>
         <div className="container">
           <Routes>
-            <Route path="/" exact element={<Home quote={quote} search={searchText} quoteFetched={quoteFetched}/>}/>
+            <Route path="/" exact element={<Home quote={quote} search={searchText} quoteFetched={quoteFetched} hideQuote={hideQuote}/>}/>
             <Route path="/characters/:id" element={<CharacterDetail/>}/>
           </Routes>
         </div>

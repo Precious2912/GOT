@@ -12,16 +12,26 @@ const Navbar = ({fetchQuote, handleSearch}) => {
   }
 
   return (
-    <div className='navbar'>
-      <Link to={'/'}><Logo className='logo'/></Link>
-      {location.pathname === '/' &&
+    <div className="navbar">
+      <Link to={"/"}>
+        <Logo className="logo" />
+      </Link>
+      {location.pathname === "/" && (
         <div className="nav">
-            <input type="text" value={text} onChange={(e) => search(e)} className="search" placeholder='Search character' />
-            <button className="btn-primary" onClick={() => fetchQuote()}>Random Quote</button>
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => search(e)}
+            className="search"
+            placeholder="Search character"
+          />
+          <button className="btn-primary" onClick={() => fetchQuote()}>
+            Random Quote
+          </button>
         </div>
-      }
+      )}
     </div>
-  )
+  );
 }
 
 export default Navbar
